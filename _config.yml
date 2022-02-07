@@ -1,4 +1,4 @@
-title: My PhD page
+title: My PhD pages
 author:
   name: Aleksandar Petreski
   email: petaleksandar@gmail.com
@@ -16,14 +16,14 @@ minima:
 
   # generate social links in footer
   social_links:
-    twitter: jekyllrb
+    # twitter: jekyllrb
     github:  petaleks
     # devto: jekyll
     # dribbble: jekyll
     # facebook: jekyll
     # flickr:   jekyll
     # instagram: jekyll
-    linkedin: jekyll
+    linkedin: aleksandarpetreski
     # pinterest: jekyll
     # youtube: jekyll
     # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
