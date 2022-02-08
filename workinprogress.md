@@ -21,7 +21,7 @@ the price volatility patterns between the market segment of apartments and house
 
 Keywords: spatial-temporal, ARCH, GARCH, transactions model, housing price volatility, volatility persistence, volatility asymmetry, housing market segments, Sweden
 
-![Alt text](https://github.com/petaleks/petreskialeksandar.github.io/blob/08adff74c2914852b55131239f2cc4e165f78e68/pictures/Swap_market_only.jpg?raw=true)
+![Alt text](https://github.com/petaleks/petaleksandar/blob/master/assets/Swap_market_only.jpg?raw=true)
 
 ### *Market for Apartment Swap and Rental Market*
 (draft version) together with Agostino Manduchi and Andreas Stephan 
