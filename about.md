@@ -8,7 +8,7 @@ My name is Aleksandar Petreski and I am a final year Doctoral Candidate at Jönk
 My research activities are affiliated with [CEnSe-Centre for Entrepreneurship and Spatial Economics](https://ju.se/center/cense.html), with focus on Real Estate & Urban Economics, Spatial Economics, Spatial Finance and Green Finance.
 I am active in the job market and available for interviews.
 
-<img src="JU_STAFF_191211-20047.jpg" style="width: 50%; height: 50%" />
+<img src="JU_STAFF_191211-20047.jpg" style="width: 30%; height: 30%" />
 
 
 
