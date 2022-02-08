@@ -4,6 +4,7 @@ title: Spatial-Temporal GARCH
 permalink: /ST_GARCH/
 --- 
 
+This notebook shows how to estimate Spatail-Temporal GARCH (1,1) using residuals from hedonic model on housing prices.
 
 ### Required libraries
 ```r
