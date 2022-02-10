@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Course Excercise code in Portfolio Optimization"
+categories: misc
+---
+
 Portfolio Optimization Rmd Notebook
 ================
 
