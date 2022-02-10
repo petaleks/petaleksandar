@@ -4,17 +4,14 @@ title: "Course Excercise code in Portfolio Optimization"
 categories: misc
 ---
 
-Portfolio Optimization Rmd Notebook
-================
 
 This code was part of the exercise session I gave in the Course: *International Portfolio Management and Investment Analysis*, autumn 2021.
 
 I did that course together with my supervisor: Prof. Andreas Stephan and my colleage Toni Duras.
 
-In the exercise I replicate parts of the Eun and Resnik analyses of international diversication under flexible
-exchange rates following [Eun and Resnik (1988)](https://www.jstor.org/stable/2328331?seq=1#metadata_info_tab_contents).
-They find that exchange rate risk is a largely non-diversiable factor which
-adversely aects the risk-return performance of international portfolios.
+In the exercise I replicate parts of the Eun and Resnik analyses of international diversification under flexible exchange rates
+ following [Eun and Resnik (1988)](https://www.jstor.org/stable/2328331?seq=1#metadata_info_tab_contents).
+They find that exchange rate risk is a largely non-diversifiable factor which adversely affetcs the risk-return performance of international portfolios.
 I used more recent data and also to take the Swedish perspective instead of being an US investor.
 
 ## Read data
@@ -1224,6 +1221,7 @@ inform_ratios # "Information ratio of returns for different strategies"
 
 #### Readings
 Eun, Cheol S., and Bruce G. Resnick. *Exchange rate uncertainty, forward contracts, and international portfolio selection*. Journal of Finance (1988): 197-215.
+
 Body, Marcus, Kane *Investments*, chap. 25, McGraw-Hill.
 
 #### R Markdown
