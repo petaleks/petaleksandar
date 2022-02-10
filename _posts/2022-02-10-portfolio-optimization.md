@@ -133,12 +133,13 @@ summary(returns)
     ##  Max.   : 0.069936   Max.   : 0.101234
 
 Plot of returns in foreign currency
-![plot](./data/figure-gfm/plot_ret_in_fx-1.png)<!-- -->
+![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/plot_ret_in_fx-1.png?raw=true)
+
 
     ## Saving 7 x 5 in image
 
 Plot of returns in local currency
-![plot](./data/figure-gfm/plot_ret_in_SEK-1.png)
+![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/plot_ret_in_SEK-1?raw=true)
 
     ## Saving 7 x 5 in image
 
@@ -656,7 +657,8 @@ sharpe # "Sharpe ratio of returns for different strategies"
     ## 0.2091829 0.2842147 0.2600151
 
 Plot Cumulative Returns from static optimization
-![](data/figure-gfm/plot_cum_ret-1.png)<!-- -->
+![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/plot_cum_ret-1.png?raw=true)
+
 
     ## Saving 7 x 5 in image
 
@@ -799,22 +801,23 @@ write.csv(OPTIM_mat, "Returns from different strategies.csv")
 ## Plot dynamic weights
 
 Plot the cumulative returns from dynamic strategies
-![](data/figure-gfm/plot_cumret-1.png)<!-- -->
+![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/plot_cumret-1.png?raw=true)
 
     ## Saving 7 x 5 in image
 
 Plot the Minimum Variance weights
-![](data/figure-gfm/dyn_minV_we-1.png)<!-- -->
+![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/dyn_minV_we-1.png?raw=true)
+
 
     ## Saving 7 x 5 in image
 
 Plot the Maximum Sharpe weights
-![](data/figure-gfm/dyn_maxS_we-1.png)<!-- -->
+![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/dyn_maxS_we-1.png?raw=true)
 
     ## Saving 7 x 5 in image
 
 Plot the CvaR weights
-![](data/figure-gfm/plot_dyn_cvar_weights-1.png)<!-- -->
+![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/plot_dyn_cvar_weights-1.png?raw=true)
 
     ## Saving 7 x 5 in image
 
