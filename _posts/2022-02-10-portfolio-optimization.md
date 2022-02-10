@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "Course code in static and dynamic Portfolio Optimization"
+title: "Course R code in static and dynamic Portfolio Optimization"
 categories: misc
 ---
-
 
 This code was part of the exercise session I gave in the Course: *International Portfolio Management and Investment Analysis*, autumn 2021.
 
@@ -13,7 +12,7 @@ In the exercise I replicate parts of the [Eun and Resnik (1988)](https://www.jst
 of international diversification under flexible exchange rates.
 They find that exchange rate risk is a largely non-diversifiable factor which adversely affects the risk-return performance of international portfolios.
 
-I used more recent data and also to take the Swedish perspective instead of being an US investor.
+I used the Swedish perspective instead of being an US investor.
 
 ## Read data
 
