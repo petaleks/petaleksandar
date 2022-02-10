@@ -1,10 +1,15 @@
 Portfolio Optimization Rmd Notebook
 ================
-Aleksandar Petreski
 
-# Set up
+This code was part of the exercise session I gave in the Course: *International Portfolio Management and Investment Analysis*, autumn 2021.
 
-## Libraries
+I did that course together with my supervisor: Prof. Andreas Stephan and my colleage Toni Duras.
+
+In the exercise I replicate parts of the Eun and Resnik analyses of international diversication under flexible
+exchange rates following [Eun and Resnik (1988)](https://www.jstor.org/stable/2328331?seq=1#metadata_info_tab_contents).
+They find that exchange rate risk is a largely non-diversiable factor which
+adversely aects the risk-return performance of international portfolios.
+I used more recent data and also to take the Swedish perspective instead of being an US investor.
 
 ## Read data
 
@@ -1209,6 +1214,11 @@ inform_ratios # "Information ratio of returns for different strategies"
 
     ##      EW_r    MinV_r    MaxS_r      CV_r  SWEDOMXr 
     ## 0.1742237 0.2115420 0.2203848 0.2731422 0.1403567
+
+
+#### Readings
+Eun, Cheol S., and Bruce G. Resnick. *Exchange rate uncertainty, forward contracts, and international portfolio selection*. Journal of Finance (1988): 197-215.
+Body, Marcus, Kane *Investments*, chap. 25, McGraw-Hill.
 
 #### R Markdown
 
