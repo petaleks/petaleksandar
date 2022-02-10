@@ -134,13 +134,50 @@ summary(returns)
     ##  Max.   : 0.069936   Max.   : 0.101234
 
 Plot of returns in foreign currency
+
+``` r
+# stack data over each other
+datum = as.Date(c(indices$Date), "%Y-%m-%d") # change to date format, so it is easier for plotting
+
+ret_M  = data.frame(date = datum[-(1:2)], rets*12)
+plotdf <- melt(ret_M[,], id="date")
+p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
+  geom_line(aes(color=variable))+
+  ggtitle("Returns in foreign currency")+
+  theme(axis.text.x = element_text(size=6, angle=90))+
+  theme(plot.title = element_text(hjust = 0.5))
+plot(p)
+```
 ![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/plot_ret_in_fx-1.png?raw=true)
 
+
+``` r
+namepic = paste0("Returns in foreign currency.jpg")
+ggsave(namepic, plot = p)
+```
 
     ## Saving 7 x 5 in image
 
 Plot of returns in local currency
-![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/plot_ret_in_SEK-1?raw=true)
+
+``` r
+# stack data over each other
+ret_M  = data.frame(date = datum[-(1:2)], returns*12)
+plotdf <- melt(ret_M[,], id="date")
+p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
+  geom_line(aes(color=variable))+
+  ggtitle("Returns in local currency")+
+  theme(axis.text.x = element_text(size=6, angle=90))+
+  theme(plot.title = element_text(hjust = 0.5))
+plot(p)
+```
+![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/plot_ret_in_SEK-1.png?raw=true)
+
+
+``` r
+namepic = paste0("Returns in local currency.jpg")
+ggsave(namepic, plot = p)
+```
 
     ## Saving 7 x 5 in image
 
@@ -658,8 +695,25 @@ sharpe # "Sharpe ratio of returns for different strategies"
     ## 0.2091829 0.2842147 0.2600151
 
 Plot Cumulative Returns from static optimization
+
+``` r
+CUM_STAT = cumsum(OPT_STAT)
+ret_M  = data.frame(date = datum[-(1:2)], CUM_STAT)
+plotdf <- melt(ret_M[,], id="date")
+p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
+  geom_line(aes(color=variable))+
+  ggtitle("Cumulative Returns from static optimization")+
+  theme(axis.text.x = element_text(size=6, angle=90))+
+  theme(plot.title = element_text(hjust = 0.5))
+plot(p)
+```
 ![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/plot_cum_ret-1.png?raw=true)
 
+
+``` r
+namepic = paste0("Cumulative Returns from static optimization.jpg")
+ggsave(namepic, plot = p)
+```
 
     ## Saving 7 x 5 in image
 
@@ -802,23 +856,90 @@ write.csv(OPTIM_mat, "Returns from different strategies.csv")
 ## Plot dynamic weights
 
 Plot the cumulative returns from dynamic strategies
-![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/plot_cumret-1.png?raw=true)
+
+``` r
+# stack data over each other
+CUMOPT = cumsum(OPTIM_mat) # create cumulative returns
+OPT_M  = data.frame(date = datum[(rollw +1):n], CUMOPT) # add column with dates
+plotdf <- melt(OPT_M[,], id="date")
+p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
+  geom_line(aes(color=variable))+
+  ggtitle("Cumulative Returns from dynamic optimization")+
+  theme(axis.text.x = element_text(size=6, angle=90))+
+  theme(plot.title = element_text(hjust = 0.5))
+plot(p)
+```
+![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/plot_cumret_dyn-1.png?raw=true)
+
+``` r
+namepic = paste0("Cumulative returns from dynamic optimization.jpg") # define name of figure
+ggsave(namepic, plot = p)                  # save it
+```
 
     ## Saving 7 x 5 in image
 
 Plot the Minimum Variance weights
+
+``` r
+MVw  = data.frame(date = datum[(rollw +1):n], MV_weights) # add column with dates
+plotdf <- melt(MVw[,], id="date")
+p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
+  geom_line(aes(color=variable))+
+  ggtitle("Minimum Variance weights")+
+  theme(axis.text.x = element_text(size=6, angle=90))+
+  theme(plot.title = element_text(hjust = 0.5))
+plot(p)
+```
 ![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/dyn_minV_we-1.png?raw=true)
 
+
+``` r
+namepic = paste0("Minimum Variance weights.jpg")
+ggsave(namepic, plot = p)
+```
 
     ## Saving 7 x 5 in image
 
 Plot the Maximum Sharpe weights
+
+``` r
+MSw  = data.frame(date = datum[(rollw +1):n], MS_weights) # add column with dates
+plotdf <- melt(MSw[,], id="date")
+p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
+  geom_line(aes(color=variable))+
+  ggtitle("Maximum Sharpe weights")+
+  theme(axis.text.x = element_text(size=6, angle=90))+
+  theme(plot.title = element_text(hjust = 0.5))
+plot(p)
+```
 ![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/dyn_maxS_we-1.png?raw=true)
+
+
+``` r
+namepic = paste0("Maximum Sharpe weights.jpg")
+ggsave(namepic, plot = p)
+```
 
     ## Saving 7 x 5 in image
 
 Plot the CvaR weights
+
+``` r
+CVw  = data.frame(date = datum[(rollw +1):n], CV_weights) # add column with dates
+plotdf <- melt(CVw[,], id="date")
+p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
+  geom_line(aes(color=variable))+
+  ggtitle("CvaR weights")+
+  theme(axis.text.x = element_text(size=6, angle=90))+
+  theme(plot.title = element_text(hjust = 0.5))
+plot(p)
+```
 ![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/plot_dyn_cvar_weights-1.png?raw=true)
+
+``` r
+namepic = paste0("CvaR weights.jpg")
+ggsave(namepic, plot = p)
+```
 
     ## Saving 7 x 5 in image
 
