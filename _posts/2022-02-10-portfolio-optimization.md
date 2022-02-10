@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Course Excercise code in Portfolio Optimization"
+title: "Course code in static and dynamic Portfolio Optimization"
 categories: misc
 ---
 
