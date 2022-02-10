@@ -4,7 +4,7 @@ title: CV
 permalink: /CV/
 --- 
 
-## Education 
+## Formal Education 
 
 
 - PhD Candidate in Economics at Jönköping International Business School, Sweden 
@@ -37,11 +37,11 @@ Faculty of Economics, University ”Ss.Cyril and Methodius” – Skopje, Macedo
 
 ## Technical skills and competences
 
-- Using software for statistical and numerical computing (R, Julia, STATA, Matlab, Eviews),
+- Proficient in using software for statistical and numerical computing (R, Julia, STATA, Matlab, Eviews),
 
 - Basic experience in programming languages (Python),
 
-- Exposure in using an object-relational database management system (PostreSQL),
+- Exposure in using an object-relational database management system (SQL),
 
 - Basic big data experience (JSMapreduce),
 
@@ -139,26 +139,24 @@ Eurostandard Bank JSC, Skopje,
 (acquired Postbank JSC Skopje)
 
 
-2013- 2017, Non-executive Member in Council of Experts
-Insurance Supervision Agency,  Republic of Macedonia
+2013- 2017, Non-executive Member in the Council of Experts
+Insurance Supervision Agency, Republic of Macedonia
 
 
 2010-2013, Commissioner	
 Security and Exchange Commission, Republic of Macedonia
 
 
-
 2008-2010, Head of Risk Management
 Post Bank JSC, Skopje
-
 
 
 2007-2008, Market / Model Risk Intern
 Risk Management, EBRD, London UK
 
 
-
-2002 -2006, Head of Cash Management
+2004 -2006, Head of Cash Management
 Treasury Department, Ministry of Finance,  Republic of Macedonia
 
-
+2002 -2004, Junior Associate
+Treasury Department, Ministry of Finance,  Republic of Macedonia
