@@ -13,10 +13,43 @@ It contains 2930 observations and huge number of explanatory variables (23 nomin
 First I use hedonic model to estimate the effect of the variables on the house prices.
 Then I use the residuals (squared) to estimate the GARCH models.
 
-The code that I show is used in my PhD paper on persistance in housing price volaitlity.
-I propose and test methodological framework of Spatial-Temporal ARCH (1) and Spatial-Temporal GARCH (1,1) model for the housing variance.
+Classical ARCH model structure
+
+-   conditional mean
+    *μ*<sub>*t*</sub> = *μ*(*θ*, *x*<sub>*t*</sub>) = *E*(*Y*<sub>*t*</sub>\|*x*<sub>*t*</sub>)
+-   conditional variance
+    *σ*<sub>*t*</sub><sup>2</sup> = *σ*<sub>*t*</sub><sup>2</sup>(*θ*, *x*<sub>*t*</sub>) = *E*((*Y*<sub>*t*</sub> − *μ*<sub>*t*</sub>)<sup>2</sup>\|*x*<sub>*t*</sub>)
+
+
+The R code that I show is used in my PhD paper to model slow decay of volatility of house prices at transactions level.
+
+In my paper I build on S-ARCH model by [Simlay (2014)](https://www.sciencedirect.com/science/article/pii/S1062976913000446?casa_token=qyWJ9r68bZIAAAAA:J2pK4EkqJQ3A9ecCOmP2VEeea15ljtOqTfjeR3i_T-6-o8msiPkB8bEendwdaR7JduWdhcZA9w) and on ST-ARCH model by [Otto, P., Schmid, W., and Garthoff, R. (2018)](https://www.sciencedirect.com/science/article/pii/S2211675318300794?casa_token=7H2cWJ9-HQAAAAAA:XU5vvA5qjQA4k9QY7d9_AJmy_vr2Hcgl7bfn4SMUnxdviW0A8XJChkckh-omAAdmNWaMixHEFw)
+
+
+To date, no study has modeled volatility persistence and asymmetry in the spatial-temporal framework at transactions level. 
+
+With this paper I attempt to fill in the missing link between spatial models of volatility persistence in housing prices, which use individual observations, and spatial-temporal
+models of volatility persistence, which use aggregated data. 
+The advantage of the proposed methodology is that it is not restricted to panel format data and is well suited to data with no repetition. In my case, I am using geo-coded housing
+data of transacted objects, appropriate for a spatial-temporal analysis. 
+
+**Spatio-temporal ARCH (1,1)** model in matrix format
+
+*σ*<sub>*n*<sub>*t*</sub>, *t*</sub><sup>2</sup> = *ω* + *α W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup>
+
+I propose and test methodological framework of Spatial-Temporal ARCH (1) and Spatial-Temporal GARCH (1,1) model for the housing volatility.
+
+**Spatio-temporal GARCH (1,1)** model in matrix format
+
+*σ*<sub>*n*<sub>*t*</sub>, *t*</sub><sup>2</sup> = *ω* + *α W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup> + *γ W̄*<sub>*t*</sub>*σ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup>
+
 I also test assymetric version of Spatial-Temporal ARCH (1) and Spatial-Temporal GARCH (1,1) models:
 AST-ARCH(1) and AST-GARCH(1,1), respectivelly.
+
+
+**Assymetric Spatio-Temporal GARCH (1,1)** model in matrix format 
+
+*σ*<sub>*n*<sub>*t*</sub>, *t*</sub><sup>2</sup> = *ω* + *α W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup> + *γ W̄*<sub>*t*</sub>*σ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup> + *δ I*<sub>(*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub> &lt; 0)</sub>*W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup>
 
 
 ### Required libraries
@@ -57,28 +90,8 @@ head(RESID)
     ## 5  2006_6 -93.61926 42.05311 -0.070721464
     ## 6 2006_10 -93.61644 42.05252  0.044184872
 
-### Model specifications
-
-Classical ARCH model structure
-
--   conditional mean
-    *μ*<sub>*t*</sub> = *μ*(*θ*, *x*<sub>*t*</sub>) = *E*(*Y*<sub>*t*</sub>\|*x*<sub>*t*</sub>)
--   conditional variance
-    *σ*<sub>*t*</sub><sup>2</sup> = *σ*<sub>*t*</sub><sup>2</sup>(*θ*, *x*<sub>*t*</sub>) = *E*((*Y*<sub>*t*</sub> − *μ*<sub>*t*</sub>)<sup>2</sup>\|*x*<sub>*t*</sub>)
-
-**Spatio-temporal ARCH (1,1)** model in matrix format
-
-*σ*<sub>*n*<sub>*t*</sub>, *t*</sub><sup>2</sup> = *ω* + *α W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup>
 
 
-**Spatio-temporal GARCH (1,1)** model in matrix format
-
-*σ*<sub>*n*<sub>*t*</sub>, *t*</sub><sup>2</sup> = *ω* + *α W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup> + *γ W̄*<sub>*t*</sub>*σ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup>
-
-
-**Assymetric Spatio-Temporal GARCH (1,1)** model in matrix format 
-
-*σ*<sub>*n*<sub>*t*</sub>, *t*</sub><sup>2</sup> = *ω* + *α W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup> + *γ W̄*<sub>*t*</sub>*σ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup> + *δ I*<sub>(*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub> &lt; 0)</sub>*W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup>
 
 ## Help functions
 
