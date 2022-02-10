@@ -12,6 +12,7 @@ I did that course together with my supervisor: Prof. Andreas Stephan and my coll
 In the exercise I replicate parts of the [Eun and Resnik (1988)](https://www.jstor.org/stable/2328331?seq=1#metadata_info_tab_contents) analyses 
 of international diversification under flexible exchange rates.
 They find that exchange rate risk is a largely non-diversifiable factor which adversely affects the risk-return performance of international portfolios.
+
 I used more recent data and also to take the Swedish perspective instead of being an US investor.
 
 ## Read data
