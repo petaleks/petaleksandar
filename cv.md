@@ -9,7 +9,7 @@ permalink: /CV/
 
 - PhD Candidate in Economics at Jönköping International Business School, Sweden 
 
-(completion date July-2022)
+(expected completion date July-2022)
 
 
 

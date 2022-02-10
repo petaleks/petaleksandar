@@ -6,7 +6,7 @@ permalink: /ST_GARCH/
 
 This notebook shows how to estimate Spatial-Temporal GARCH (1,1) using R code and residuals from hedonic model on housing prices.
 
-I am using data on housing prices compiled by [Dean De Cock, 2011](http://jse.amstat.org/v19n3/decock.pdf).
+I am using data on housing prices compiled by [Dean De Cock (2011)](http://jse.amstat.org/v19n3/decock.pdf).
 The data set describes the sale of individual residential property in Ames, Iowa from 2006 to 2010. 
 It contains 2930 observations and huge number of explanatory variables (23 nominal, 23 ordinal, 14 discrete, and 20 continuous).
 
