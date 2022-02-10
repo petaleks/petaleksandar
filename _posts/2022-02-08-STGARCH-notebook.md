@@ -100,7 +100,7 @@ p =ggplot(plotres, aes(x=X, y=Y)) +
   aesthetics = "colour")
 plot(p)
 ```
-Plot squared residuals on XY coordinates
+Plot squared residuals on XY coordinates (static, full sample)
 
 ![](https://github.com/petaleks/petaleksandar/blob/master/data/figure-gfm/plot_squared_residuals.png?raw=true)
 
