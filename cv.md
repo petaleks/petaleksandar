@@ -23,7 +23,7 @@ Graduated with distinction
 Faculty of Economics, University ”Ss.Cyril and Methodius” – Skopje, Macedonia
  
 
-## Avards
+## Awards
 
 - Awarded [Eurekahedge Prize](https://www.icmacentre.ac.uk/news/2007/another-prize-for-star-finance-student) for the graduation research project on Hedge Fund Risk
 
