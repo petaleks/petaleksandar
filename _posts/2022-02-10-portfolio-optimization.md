@@ -133,12 +133,12 @@ summary(returns)
     ##  Max.   : 0.069936   Max.   : 0.101234
 
 Plot of returns in foreign currency
-![](./data/figure-gfm/plot_ret_in_fx-1.png)<!-- -->
+![plot](./data/figure-gfm/plot_ret_in_fx-1.png)<!-- -->
 
     ## Saving 7 x 5 in image
 
 Plot of returns in local currency
-![](./data/figure-gfm/plot_ret_in_SEK-1.png)
+![plot](./data/figure-gfm/plot_ret_in_SEK-1.png)
 
     ## Saving 7 x 5 in image
 
