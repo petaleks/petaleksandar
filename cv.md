@@ -23,6 +23,8 @@ Graduated with distinction
 Faculty of Economics, University ”Ss.Cyril and Methodius” – Skopje, Macedonia
  
 
+## Avards
+
 - Awarded [Eurekahedge Prize](https://www.icmacentre.ac.uk/news/2007/another-prize-for-star-finance-student) for the graduation research project on Hedge Fund Risk
 
 - Awarded [PRMIA Institute Academic Grant](https://www.icmacentre.ac.uk/news/2007/carol-alexander-selects-aleksander-petreski-to-receive-prmia-institute-grant), due to excellent performance on the MSc Course
