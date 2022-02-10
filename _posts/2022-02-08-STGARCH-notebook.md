@@ -14,7 +14,9 @@ First I use hedonic model to estimate the effect of the variables on the house p
 Then I use the residuals (squared) to estimate the GARCH models.
 
 The code that I show is used in my PhD paper on persistance in housing price volaitlity.
-I propose and test methodological framework of Spatial-Temporal ARCH (1) and Spatial-Temporal GARCH (1,1) model to model the housing variance.
+I propose and test methodological framework of Spatial-Temporal ARCH (1) and Spatial-Temporal GARCH (1,1) model for the housing variance.
+I also test assymetric version of Spatial-Temporal ARCH (1) and Spatial-Temporal GARCH (1,1) models:
+AST-ARCH(1) and AST-GARCH(1,1), respectivelly.
 
 
 ### Required libraries
