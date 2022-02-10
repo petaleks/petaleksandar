@@ -87,6 +87,20 @@ head(RESID)
     ## 5  2006_6 -93.61926 42.05311 -0.070721464
     ## 6 2006_10 -93.61644 42.05252  0.044184872
 
+``` r
+plotres = data.frame(RESID, eps2 = RESID$eps^2)
+plotres = plotres[plotres$eps2 < quantile(plotres$eps2,0.975),]
+p =ggplot(plotres, aes(x=X, y=Y)) +
+  geom_point(aes(color=eps2))+
+  scale_colour_gradient(low = "yellow",
+  high = "red",
+  space = "Lab",
+  na.value = "grey50",
+  guide = "colourbar",
+  aesthetics = "colour")
+plot(p)
+```
+![](https://github.com/petaleks/petaleksandar/blob/ee34ae0fd86ea66c0a31d36676e5ffc5b554cb45/data/figure-gfm/plot_squared_residuals.png?raw=true)
 
 
 
@@ -331,11 +345,6 @@ while( length(no_neighbours) > 0){
     ## [1] 2680
     ## [1] 0
 
-``` r
-ggplot(RESID, aes(x=X, y=Y)) +geom_point()
-```
-
-![](ST_GARCH_rmarkdown_notebook_files/figure-gfm/plot1-1.png)<!-- -->
 
 ``` r
 # Create W matrix
