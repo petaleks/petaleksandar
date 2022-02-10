@@ -9,9 +9,9 @@ This code was part of the exercise session I gave in the Course: *International 
 
 I did that course together with my supervisor: Prof. Andreas Stephan and my colleage Toni Duras.
 
-In the exercise I replicate parts of the Eun and Resnik analyses of international diversification under flexible exchange rates
- following [Eun and Resnik (1988)](https://www.jstor.org/stable/2328331?seq=1#metadata_info_tab_contents).
-They find that exchange rate risk is a largely non-diversifiable factor which adversely affetcs the risk-return performance of international portfolios.
+In the exercise I replicate parts of the [Eun and Resnik (1988)](https://www.jstor.org/stable/2328331?seq=1#metadata_info_tab_contents) analyses 
+of international diversification under flexible exchange rates.
+They find that exchange rate risk is a largely non-diversifiable factor which adversely affects the risk-return performance of international portfolios.
 I used more recent data and also to take the Swedish perspective instead of being an US investor.
 
 ## Read data
@@ -133,50 +133,12 @@ summary(returns)
     ##  Max.   : 0.069936   Max.   : 0.101234
 
 Plot of returns in foreign currency
-
-``` r
-# stack data over each other
-datum = as.Date(c(indices$Date), "%Y-%m-%d") # change to date format, so it is easier for plotting
-
-ret_M  = data.frame(date = datum[-(1:2)], rets*12)
-plotdf <- melt(ret_M[,], id="date")
-p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
-  geom_line(aes(color=variable))+
-  ggtitle("Returns in foreign currency")+
-  theme(axis.text.x = element_text(size=6, angle=90))+
-  theme(plot.title = element_text(hjust = 0.5))
-p
-```
-
-![](R_markdown_portfolio_files/figure-gfm/plot_ret_in_fx-1.png)<!-- -->
-
-``` r
-namepic = paste0("Returns in foreign currency.jpg")
-ggsave(namepic, plot = p)
-```
+![](data/figure-gfm/plot_ret_in_fx-1.png)<!-- -->
 
     ## Saving 7 x 5 in image
 
 Plot of returns in local currency
-
-``` r
-# stack data over each other
-ret_M  = data.frame(date = datum[-(1:2)], returns*12)
-plotdf <- melt(ret_M[,], id="date")
-p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
-  geom_line(aes(color=variable))+
-  ggtitle("Returns in local currency")+
-  theme(axis.text.x = element_text(size=6, angle=90))+
-  theme(plot.title = element_text(hjust = 0.5))
-p
-```
-
-![](R_markdown_portfolio_files/figure-gfm/plot_ret_in_SEK-1.png)<!-- -->
-
-``` r
-namepic = paste0("Returns in local currency.jpg")
-ggsave(namepic, plot = p)
-```
+![](data/figure-gfm/plot_ret_in_SEK-1.png)<!-- -->
 
     ## Saving 7 x 5 in image
 
@@ -694,25 +656,7 @@ sharpe # "Sharpe ratio of returns for different strategies"
     ## 0.2091829 0.2842147 0.2600151
 
 Plot Cumulative Returns from static optimization
-
-``` r
-CUM_STAT = cumsum(OPT_STAT)
-ret_M  = data.frame(date = datum[-(1:2)], CUM_STAT)
-plotdf <- melt(ret_M[,], id="date")
-p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
-  geom_line(aes(color=variable))+
-  ggtitle("Cumulative Returns from static optimization")+
-  theme(axis.text.x = element_text(size=6, angle=90))+
-  theme(plot.title = element_text(hjust = 0.5))
-p
-```
-
-![](R_markdown_portfolio_files/figure-gfm/plot_cum_ret-1.png)<!-- -->
-
-``` r
-namepic = paste0("Cumulative Returns from static optimization.jpg")
-ggsave(namepic, plot = p)
-```
+![](data/figure-gfm/plot_cum_ret-1.png)<!-- -->
 
     ## Saving 7 x 5 in image
 
@@ -855,92 +799,22 @@ write.csv(OPTIM_mat, "Returns from different strategies.csv")
 ## Plot dynamic weights
 
 Plot the cumulative returns from dynamic strategies
-
-``` r
-# stack data over each other
-CUMOPT = cumsum(OPTIM_mat) # create cumulative returns
-OPT_M  = data.frame(date = datum[(rollw +1):n], CUMOPT) # add column with dates
-plotdf <- melt(OPT_M[,], id="date")
-p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
-  geom_line(aes(color=variable))+
-  ggtitle("Cumulative Returns from dynamic optimization")+
-  theme(axis.text.x = element_text(size=6, angle=90))+
-  theme(plot.title = element_text(hjust = 0.5))
-p
-```
-
-![](R_markdown_portfolio_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
-
-``` r
-namepic = paste0("Cumulative returns from dynamic optimization.jpg") # define name of figure
-ggsave(namepic, plot = p)                  # save it
-```
+![](data/figure-gfm/plot_cumret-1.png)<!-- -->
 
     ## Saving 7 x 5 in image
 
 Plot the Minimum Variance weights
-
-``` r
-MVw  = data.frame(date = datum[(rollw +1):n], MV_weights) # add column with dates
-plotdf <- melt(MVw[,], id="date")
-p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
-  geom_line(aes(color=variable))+
-  ggtitle("Minimum Variance weights")+
-  theme(axis.text.x = element_text(size=6, angle=90))+
-  theme(plot.title = element_text(hjust = 0.5))
-p
-```
-
-![](R_markdown_portfolio_files/figure-gfm/dyn_minV_we-1.png)<!-- -->
-
-``` r
-namepic = paste0("Minimum Variance weights.jpg")
-ggsave(namepic, plot = p)
-```
+![](data/figure-gfm/dyn_minV_we-1.png)<!-- -->
 
     ## Saving 7 x 5 in image
 
 Plot the Maximum Sharpe weights
-
-``` r
-MSw  = data.frame(date = datum[(rollw +1):n], MS_weights) # add column with dates
-plotdf <- melt(MSw[,], id="date")
-p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
-  geom_line(aes(color=variable))+
-  ggtitle("Maximum Sharpe weights")+
-  theme(axis.text.x = element_text(size=6, angle=90))+
-  theme(plot.title = element_text(hjust = 0.5))
-p
-```
-
-![](R_markdown_portfolio_files/figure-gfm/dyn_maxS_we-1.png)<!-- -->
-
-``` r
-namepic = paste0("Maximum Sharpe weights.jpg")
-ggsave(namepic, plot = p)
-```
+![](data/figure-gfm/dyn_maxS_we-1.png)<!-- -->
 
     ## Saving 7 x 5 in image
 
 Plot the CvaR weights
-
-``` r
-CVw  = data.frame(date = datum[(rollw +1):n], CV_weights) # add column with dates
-plotdf <- melt(CVw[,], id="date")
-p = ggplot(plotdf, aes(x=date, y=value, group=variable)) +
-  geom_line(aes(color=variable))+
-  ggtitle("CvaR weights")+
-  theme(axis.text.x = element_text(size=6, angle=90))+
-  theme(plot.title = element_text(hjust = 0.5))
-p
-```
-
-![](R_markdown_portfolio_files/figure-gfm/plot_dyn_cvar_weights-1.png)<!-- -->
-
-``` r
-namepic = paste0("CvaR weights.jpg")
-ggsave(namepic, plot = p)
-```
+![](data/figure-gfm/plot_dyn_cvar_weights-1.png)<!-- -->
 
     ## Saving 7 x 5 in image
 
@@ -1218,9 +1092,8 @@ inform_ratios # "Information ratio of returns for different strategies"
     ##      EW_r    MinV_r    MaxS_r      CV_r  SWEDOMXr 
     ## 0.1742237 0.2115420 0.2203848 0.2731422 0.1403567
 
-
 #### Readings
-Eun, Cheol S., and Bruce G. Resnick. *Exchange rate uncertainty, forward contracts, and international portfolio selection*. Journal of Finance (1988): 197-215.
+Eun, Cheol S., and Bruce G. Resnick. *Exchange rate uncertainty, forward contracts, and international portfolio selection*. Journal of Finance (1988): 197-215.
 
 Body, Marcus, Kane *Investments*, chap. 25, McGraw-Hill.
 
