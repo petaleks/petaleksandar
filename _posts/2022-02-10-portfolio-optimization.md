@@ -4,7 +4,8 @@ title: "Course R code in static and dynamic portfolio optimization"
 categories: misc
 ---
 
-This code was part of the exercise session I gave in the Course: *International Portfolio Management and Investment Analysis*, autumn 2021 at [JIBS-Jönköping International Business School](https://ju.se/en/about-us/jonkoping-international-business-school.html)
+This code was part of the exercise session I gave in the Course: *International Portfolio Management and Investment Analysis*, autumn 2021 
+at [JIBS-Jönköping International Business School](https://ju.se/en/about-us/jonkoping-international-business-school.html), Jönköping University, Sweden.
 
 I did that course together with my supervisor: Prof. Andreas Stephan and my colleage Toni Duras.
 
