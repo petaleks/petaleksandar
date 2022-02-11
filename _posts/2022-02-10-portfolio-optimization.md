@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Course R code in static and dynamic portfolio optimization"
+title: "Course R code for static and dynamic portfolio optimization"
 categories: misc
 ---
 

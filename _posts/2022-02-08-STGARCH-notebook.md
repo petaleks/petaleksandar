@@ -90,20 +90,54 @@ head(RESID)
 ``` r
 plotres = data.frame(RESID, eps2 = RESID$eps^2)
 plotres = plotres[plotres$eps2 < quantile(plotres$eps2,0.975),]
+plotres = plotres[order(plotres$ym),]
+year_mo = unique(plotres$ym)
+plotres$period = 1
+for (p in 2:length(year_mo)){
+  plotres$period[plotres$ym == year_mo[p]] = unique(plotres$period[plotres$ym == year_mo[p-1]]) + 1
+  }
 p =ggplot(plotres, aes(x=X, y=Y)) +
-  geom_point(aes(color=eps2))+
-  scale_colour_gradient(low = "yellow",
-  high = "red",
+  geom_point(aes(color=eps2, size =eps2))+
+  scale_colour_gradient(low = "orange",
+  high = "blue",
   space = "Lab",
   na.value = "grey50",
   guide = "colourbar",
   aesthetics = "colour")
 plot(p)
+ggsave("static_eps2.png", width = 7, height = 4)
 ```
+
+Spatial only ARCH is used to model squared residuals from the sample at each month.
+
 Plot squared residuals on XY coordinates (static, full sample)
 
-![](https://github.com/petaleks/petaleksandar/blob/master/data/figure-gfm/plot_squared_residuals.png?raw=true)
+![](https://github.com/petaleks/petaleksandar/blob/master/data/figure-gfm/static_eps2.png?raw=true)
 
+
+``` r
+x_min = min(plotres$X)
+x_max = max(plotres$X)
+y_min = min(plotres$Y)
+y_max = max(plotres$Y)
+
+tp <- p + 
+xlim(x_min, x_max)+
+ylim(y_min, y_max)+
+transition_time(period) +
+ease_aes('linear', interval = 0.02) +
+view_follow(fixed_y = TRUE)
+
+# Increasing the number of frames and decreasing the fps will both decrease the speed
+animate(tp, height = 800, width =800, nframes = 200, fps=2)
+anim_save("dynamic_eps2.gif", tp, renderer = gifski_renderer())
+```
+
+Spatial-temporal GARCH is used to model squared residuals from the sample at each month.
+
+Plot squared residuals on XY coordinates (dynamic, sample at each month)
+
+![](https://github.com/petaleks/petaleksandar/blob/master/data/figure-gfm/dynamic_eps2.gif?raw=true)
 
 
 ## Help functions
