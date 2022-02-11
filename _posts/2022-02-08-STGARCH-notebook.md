@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Spatial-Temporal GARCH (1,1)
-permalink: /ST_GARCH/
+categories: misc
 --- 
 
 This notebook shows how to estimate Spatial-Temporal GARCH (1,1) using R code and residuals from hedonic model on housing prices.
