@@ -122,15 +122,15 @@ y_min = min(plotres$Y)
 y_max = max(plotres$Y)
 
 tp <- p + 
-xlim(x_min, x_max)+
-ylim(y_min, y_max)+
+lims(x = c(x_min, x_max),
+    y = c(y_min, y_max)) +
 transition_time(period) +
 ease_aes('linear', interval = 0.02) +
 view_follow(fixed_y = TRUE)
 
 # Increasing the number of frames and decreasing the fps will both decrease the speed
-animate(tp, height = 800, width =800, nframes = 200, fps=2)
-anim_save("dynamic_eps2.gif", tp, renderer = gifski_renderer())
+myanim = animate(tp, fps=1.5, duration=40, height = 4, width = 7, units = "in", res = 150)
+anim_save("dynamic_eps2.gif", myanim, renderer = gifski_renderer())
 ```
 
 Spatial-temporal GARCH is used to model squared residuals from the sample at each month.
