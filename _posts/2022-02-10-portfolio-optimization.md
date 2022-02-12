@@ -23,13 +23,15 @@ I used the Swedish perspective instead of being an US investor.
 -   [Static optimization](#static-optimization)
 	-   [Minimum variance](#minimum-variance)
 		-   [Short sale allowed](#short-sale-allowed)
-		-   [No short sale)](#no-short-sale)
+		-   [No short sale](#no-short-sale)
 	-   [Maximum Sharpe](#maximum-Sharpe)
-		-   [Short Sales allowed](#short-sales-allowed)
-		-   [No Short Sales allowed](#no-short-sales-allowed)
-        -   [Maximum Sharpe](#maximum-Sharpe)
-
-
+		-   [Short sale allowed](#short-sale-allowed)
+		-   [No short sale](#no-short-sale)
+        -   [Minimize Conditional VaR, no short sale](#minimize-conditional-var,-no-short-sale)
+-   [Dynamic optimization](#dynamic-optimization)
+-   [Plot dynamic weights](#plot-dynamic-weights)
+-   [CAPM Regression](#capm-regression)
+-   [Statistics from dynamic strategies](#statistics-from-dynamic-strategies)
 
 
 
@@ -511,7 +513,8 @@ as.numeric(sharpe_MV2) # "annual Sharpe ratio of MV portfolio (no SS)"
 
 ## Maximum Sharpe
 
-### Short Sales allowed
+		
+### Short sales allowed
 
 ``` r
 Wr <- as.matrix(c(rep(1/(k+1),k+1)))    # create Weight matrix with k+1 assets
@@ -566,7 +569,8 @@ sharpe_MS1 #  annual Sharpe ratio of MS portfolio (SS)
     ##          [,1]
     ## [1,] 1.229073
 
-### No Short Sales allowed
+
+### No short sale
 
 ``` r
 Wr <- as.matrix(c(rep(1/(k+1),k+1)))
@@ -609,7 +613,7 @@ sharpe_MS2 # annual Sharpe ratio of MS portfolio (no SS)
     ##           [,1]
     ## [1,] 0.9367776
 
-## Minimize Conditional VaR - no Short Sales allowed
+## Minimize Conditional VaR, no short sale
 
 ``` r
 CVar_results <- optim( par=W, MCVar, ret=returns, alpha=0.05,
