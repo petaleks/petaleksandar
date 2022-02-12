@@ -15,6 +15,24 @@ They find that exchange rate risk is a largely non-diversifiable factor which ad
 
 I used the Swedish perspective instead of being an US investor.
 
+## Table of Contents
+
+-   [Read data](#read-data)
+-   [Functions](#functions)
+-   [Calculate mean vector and covarience matrix](#calculate-mean-vector-and-covarience-matrix)
+-   [Static optimization](#static-optimization)
+	-   [Minimum variance](#minimum-variance)
+		-   [Short sale allowed](#short-sale-allowed)
+		-   [No short sale)](#no-short-sale)
+	-   [Maximum Sharpe](#maximum-Sharpe)
+		-   [Short Sales allowed](#short-sales-allowed)
+		-   [No Short Sales allowed](#no-short-sales-allowed)
+        -   [Maximum Sharpe](#maximum-Sharpe)
+
+
+
+
+
 ## Read data
 
 ``` r
@@ -414,7 +432,7 @@ sharpe_EQ # "Annual sharpe ratio of equally weighted portfolio"
 
 ## Minimum variance
 
-### Static optimization with SS (short sale allowed)
+### Short sale allowed
 
 ``` r
 W <- as.matrix(vec_eq)
@@ -453,7 +471,7 @@ as.numeric(sharpe_MV1) # "annual Sharpe ratio of MV portfolio (SS)"
 
     ## [1] 0.7189121
 
-### Static optimization - no SS (no Short sale)
+### No short sale
 
 ``` r
 MinVar_NoSS_results <- optim( par=W, Min_Var, SIGMA=SIGMA, 
