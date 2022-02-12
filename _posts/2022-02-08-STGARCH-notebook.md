@@ -50,7 +50,6 @@ I also test assymetric version of Spatial-Temporal ARCH (1) and Spatial-Temporal
 *σ*<sub>*n*<sub>*t*</sub>, *t*</sub><sup>2</sup> = *ω* + *α W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup> + *γ W̄*<sub>*t*</sub>*σ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup> + *δ I*<sub>(*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub> &lt; 0)</sub>*W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup>
 
 
-[Headers](#headers)
 
 ### Required libraries
 ```r
