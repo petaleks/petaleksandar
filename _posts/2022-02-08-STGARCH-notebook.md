@@ -49,7 +49,46 @@ I also test assymetric version of Spatial-Temporal ARCH (1) and Spatial-Temporal
 
 *σ*<sub>*n*<sub>*t*</sub>, *t*</sub><sup>2</sup> = *ω* + *α W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup> + *γ W̄*<sub>*t*</sub>*σ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup> + *δ I*<sub>(*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub> &lt; 0)</sub>*W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup>
 
+## Table of Contents
 
+-   [Required libraries](#required-libraries)
+    -   [Get residuals from house prices in Iowa per year/month with
+        their
+        coordinates](#get-residuals-from-house-prices-in-iowa-per-year/month-with-their-coordinates)
+-   [Help functions](#help-functions)
+    -   [function for trace](#function-for-trace)
+    -   [function for creating spatial-temporal
+        matrices](#function-for-creating-spatial-temporal-matrices)
+    -   [function for identifying points with no
+        neighbours](#function-for-identifying-points-with-no-neighbours)
+    -   [function for deleting points with no
+        neighbours](#function-for-deleting-points-with-no-neighbours)
+-   [Iterate functions](#iterate-functions)
+    -   [function for creating SARCH model time
+        series](#function-for-creating-sarch-model-time-series)
+    -   [function for creating assymetric ST-GARCH model time
+        series](#function-for-creating-assymetric-st-garch-model-time-series)
+-   [QML functions](#qml-functions)
+    -   [S-ARCH](#s-arch)
+    -   [ST-GARCH: allowing past -> present
+        effects](#st-garch:-allowing-past--%3E-present-effects)
+    -   [ST-GARCH: allowing past + present -> present
+        effects](#st-garch:-allowing-past-+-present--%3E-present-effects)
+-   [GMM functions](#gmm-functions)
+    -   [Function for creating moments for SARCH
+        series](#function-for-creating-moments-for-sarch-series)
+    -   [Function for creating moments for ST-GARCH
+        series](#function-for-creating-moments-for-st-garch-series)
+    -   [Create average of moments for SARCH
+        series](#create-average-of-moments-for-sarch-series)
+    -   [Create average of moments for ST-GARCH
+        series](#create-average-of-moments-for-st-garch-series)
+    -   [Quadratic form of average moment function for SARCH
+        series](#quadratic-form-of-average-moment-function-for-sarch-series)
+    -   [Quadratic form of average moment function for ST-GARCH
+        series](#quadratic-form-of-average-moment-function-for-st-garch-series)
+-   [Estimation functions](#estimation-functions)
+-   [Estimation](#estimation)
 
 ### Required libraries
 ```r
