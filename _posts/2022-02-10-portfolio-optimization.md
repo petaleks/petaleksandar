@@ -27,7 +27,7 @@ I used the Swedish perspective instead of being an US investor.
 	-   [Maximum Sharpe](#maximum-Sharpe)
 		-   [Short sale allowed](#short-sale-allowed)
 		-   [No short sale](#no-short-sale)
-        -   [Minimize Conditional VaR, no short sale](#minimize-conditional-var,-no-short-sale)
+        -   [Minimize Conditional VaR no short sale](#minimize-conditional-var-no-short-sale)
 -   [Dynamic optimization](#dynamic-optimization)
 -   [Plot dynamic weights](#plot-dynamic-weights)
 -   [CAPM Regression](#capm-regression)
@@ -613,7 +613,7 @@ sharpe_MS2 # annual Sharpe ratio of MS portfolio (no SS)
     ##           [,1]
     ## [1,] 0.9367776
 
-## Minimize Conditional VaR, no short sale
+## Minimize Conditional VaR no short sale
 
 ``` r
 CVar_results <- optim( par=W, MCVar, ret=returns, alpha=0.05,
