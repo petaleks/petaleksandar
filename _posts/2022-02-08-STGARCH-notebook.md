@@ -15,6 +15,17 @@ models of volatility persistence, which use aggregated data.
 The advantage of the proposed methodology is that it is not restricted to panel format data and is well suited to data with no repetition. In my case, I am using geo-coded housing
 data of transacted objects, appropriate for a spatial-temporal analysis. 
 
+
+First I use hedonic model to estimate the effect of the variables on the house prices.
+Then I use the residuals (squared) to estimate the GARCH models.
+
+Classical ARCH model structure:
+
+-   conditional mean
+    *μ*<sub>*t*</sub> = *μ*(*θ*, *x*<sub>*t*</sub>) = *E*(*Y*<sub>*t*</sub>\|*x*<sub>*t*</sub>)
+-   conditional variance
+    *σ*<sub>*t*</sub><sup>2</sup> = *σ*<sub>*t*</sub><sup>2</sup>(*θ*, *x*<sub>*t*</sub>) = *E*((*Y*<sub>*t*</sub> − *μ*<sub>*t*</sub>)<sup>2</sup>\|*x*<sub>*t*</sub>)
+
 I propose and test methodological framework of Spatial-Temporal ARCH (1) and Spatial-Temporal GARCH (1,1) model for the housing volatility.
 
 **Spatio-temporal ARCH (1,1)** model in matrix format
@@ -31,15 +42,6 @@ I also test assymetric version of Spatial-Temporal ARCH (1) and Spatial-Temporal
 
 *σ*<sub>*n*<sub>*t*</sub>, *t*</sub><sup>2</sup> = *ω* + *α W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup> + *γ W̄*<sub>*t*</sub>*σ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup> + *δ I*<sub>(*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub> &lt; 0)</sub>*W̄*<sub>*t*</sub>*ϵ*<sub>*n*<sub>*t*</sub>, *t* − 1</sub><sup>2</sup>
 
-First I use hedonic model to estimate the effect of the variables on the house prices.
-Then I use the residuals (squared) to estimate the GARCH models.
-
-Classical ARCH model structure:
-
--   conditional mean
-    *μ*<sub>*t*</sub> = *μ*(*θ*, *x*<sub>*t*</sub>) = *E*(*Y*<sub>*t*</sub>\|*x*<sub>*t*</sub>)
--   conditional variance
-    *σ*<sub>*t*</sub><sup>2</sup> = *σ*<sub>*t*</sub><sup>2</sup>(*θ*, *x*<sub>*t*</sub>) = *E*((*Y*<sub>*t*</sub> − *μ*<sub>*t*</sub>)<sup>2</sup>\|*x*<sub>*t*</sub>)
 
 I am using data on housing prices compiled by [Dean De Cock (2011)](http://jse.amstat.org/v19n3/decock.pdf).
 The data set describes the sale of individual residential property in Ames, Iowa from 2006 to 2010. 
