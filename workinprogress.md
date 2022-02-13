@@ -38,6 +38,4 @@ JEL Classification: E30, R30, R32
 
 
 
-[Google scholar profile](https://scholar.google.com/citations?user=y9xrJXUAAAAJ&hl=en)
-
 [Google cites](https://sites.google.com/view/aleksandar-petreski/home)
